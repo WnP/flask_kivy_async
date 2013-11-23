@@ -9,6 +9,18 @@ This is an example project with:
 - Simple TCP non blocking server
 - Simple [kivy](http://kivy.org) TCP client
 
+## Design
+
+```
+--------------        --------------       ----------------
+| web_client |<------>| web_server |<----->|              |
+--------------        --------------       |              |
+                                           | redis_server |
+--------------        --------------       |              |
+|kivy_client |------->| tcp_server |------>|              |
+--------------        --------------       ----------------
+```
+
 ## Usage
 
 - First you need to install `redis`
@@ -29,11 +41,11 @@ pip install -r async_server/requirements.txt
 python async_server/web_server/main.py  # for the Flask webserver
 ```
 
-Now the Flask web server will listen on port 5002 (change this in the source file if wanted)
+Now the Flask web server is listening on port 5002 (change this in the source file if wanted)
 
 
 ```sh
-python async_server/tcp_server/server.py
+python async_server/tcp_server/server.py  # for the TCP server
 ```
 
 Now the TCP server is listening on port 5010 (change this in the source file if wanted)
