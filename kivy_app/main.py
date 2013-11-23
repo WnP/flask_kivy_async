@@ -36,7 +36,7 @@ class SclMain(BoxLayout):
                     int(self.g.value),
                     int(self.b.value),
                 )))
-        except ValueError, error:
+        except ValueError:
             pass
         finally:
             s.close()
