@@ -1,0 +1,54 @@
+#:kivy 1.7.2
+
+<SclMain>
+    orientation:'vertical'
+    r: slider1
+    g: slider2
+    b: slider3
+
+    Label:
+        text: 'SCL RGB'
+        size_hint: 1, .2
+
+    BoxLayout:
+        size_hint: 1, .1
+        Label:
+            text:'[color=ff0000]R[/color]'
+            markup:True
+        Label:
+            text:'[color=00ff00]G[/color]'
+            markup:True
+        Label:
+            text:'[color=0000ff]B[/color]'
+            markup:True
+
+    BoxLayout:
+        Slider:
+            id: slider1
+            min:0
+            max:255
+            orientation:'vertical'
+            on_touch_move: root.send_rgb()
+        Slider:
+            id: slider2
+            min:0
+            min:0
+            max:255
+            orientation:'vertical'
+            on_touch_move: root.send_rgb()
+        Slider:
+            id: slider3
+            min:0
+            min:0
+            max:255
+            orientation:'vertical'
+            on_touch_move: root.send_rgb()
+
+    BoxLayout:
+        size_hint: 1, .2
+        Label:
+            text: str(int(slider1.value))
+        Label:
+            text: str(int(slider2.value))
+        Label:
+            text: str(int(slider3.value))
