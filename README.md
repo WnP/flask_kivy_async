@@ -9,6 +9,10 @@ This is an example project with:
 - Simple TCP non blocking server
 - Simple [kivy](http://kivy.org) TCP client
 
+Flask serve a webpage with three faders (RGB), when moving those faders the background color change for the current page and all pages connected on Flask server.
+
+The Kivy application can send data to change the background color too.
+
 ## Design
 
 ```
